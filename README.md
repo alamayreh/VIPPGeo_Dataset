@@ -1,4 +1,4 @@
-# UNDER CONSTRUCTION !
+# VIPPGeo Dataset UNDER CONSTRUCTION !
 &nbsp;
 
 
@@ -10,10 +10,12 @@
     <img src="images/vipplogo2020-1466x236.png" alt="Logo" width="733" height="118">
   </a>
 
-  <h3 align="center"> VIPPGeo Dataset </h3>
+  <h2 align="center"> Which country is this picture from? New data and methods for DNN-based
+country recognition </h2>
 
-  <p align="center">
-    This is the official GitHub repository for the paper!
+  <p align="left">
+    This is the official GitHub repository for the paper : Which country is this picture from? New data and methods for DNN-based
+country recognition
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
