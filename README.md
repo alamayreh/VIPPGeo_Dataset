@@ -1,4 +1,4 @@
-# VIPPGeo_Dataset
+# VIPPGeo_Dataset UNDER CONSTRUCTION
 &nbsp;
 
 ## 1. Get Flickr, Splash, and Mapillary csv data. 
