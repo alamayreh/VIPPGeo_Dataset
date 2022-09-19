@@ -1,4 +1,4 @@
-# VIPPGeo Dataset UNDER CONSTRUCTION !
+# UNDER CONSTRUCTION !
 &nbsp;
 
 
@@ -6,11 +6,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="http://clem.dii.unisi.it/~vipp/index.html">
     <img src="images/vipplogo2020-1466x236.png" alt="Logo" width="733" height="118">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center"> VIPPGeo Dataset </h3>
 
   <p align="center">
     This is the official GitHub repository for the paper!
