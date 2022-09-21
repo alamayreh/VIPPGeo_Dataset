@@ -2,7 +2,7 @@
 &nbsp;
 
 This is the official repository for the paper : 
-Which country is this picture from? New data and methods for DNN-based country recognition https://arxiv.org/pdf/2209.02429.pdf 
+[Which country is this picture from? New data and methods for DNN-based country recognition](https://arxiv.org/pdf/2209.02429.pdf) 
 
 ## 1. Get Flickr, Splash, and Mapillary csv data. 
 
