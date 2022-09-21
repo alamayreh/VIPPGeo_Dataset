@@ -19,6 +19,8 @@ country recognition </h2>
   </p>
 </div>
 
+&nbsp;
+&nbsp;
 
 ## 1. Get Flickr, Splash, and Mapillary csv data. 
 
