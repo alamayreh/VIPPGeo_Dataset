@@ -14,8 +14,8 @@
 country recognition </h2>
 
   <p align="left">
-    This is the official GitHub repository for the paper : [Which country is this picture from? New data and methods for DNN-based
-country recognition](https://arxiv.org/pdf/2209.02429.pdf)
+    This is the official GitHub repository for the paper : Which country is this picture from? New data and methods for DNN-based
+country recognition https://arxiv.org/pdf/2209.02429.pdf .
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
