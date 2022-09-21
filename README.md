@@ -1,26 +1,8 @@
 # VIPPGeo Dataset UNDER CONSTRUCTION !
 &nbsp;
 
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="http://clem.dii.unisi.it/~vipp/index.html">
-    <img src="images/vipplogo2020-1466x236.png" alt="Logo" width="733" height="118">
-  </a>
-
-  <h2 align="center"> Which country is this picture from? New data and methods for DNN-based
-country recognition </h2>
-
-  <p align="left">
-    This is the official repository for the paper : 
-    Which country is this picture from? New data and methods for DNN-based country recognition https://arxiv.org/pdf/2209.02429.pdf 
-  </p>
-</div>
-
-&nbsp;
-&nbsp;
+This is the official repository for the paper : 
+Which country is this picture from? New data and methods for DNN-based country recognition https://arxiv.org/pdf/2209.02429.pdf 
 
 ## 1. Get Flickr, Splash, and Mapillary csv data. 
 
