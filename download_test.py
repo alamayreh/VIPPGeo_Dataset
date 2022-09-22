@@ -1,3 +1,9 @@
+"""
+Created on Fri Oct 28 21:46:23 2016
+@author: stephen
+"""
+
+
 from argparse import ArgumentParser
 import sys
 from io import BytesIO
@@ -15,8 +21,6 @@ import PIL
 from PIL import ImageFile
 from tqdm import tqdm
 
-
-#python3 download_test.py --output /data2/omran/dataset_3.8/flickr_splash_mapilry/test_dir --url_csv /data2/omran/dataset_3.8/urls/test.csv --shuffle --size_suffix ""
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 

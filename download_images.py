@@ -1,3 +1,12 @@
+"""
+Acknowledgement 
+This code heavily depends on the code provided by 
+
+"Geolocation Estimation of Photos using a Hierarchical Model and Scene Classification" 
+
+please refer to their GitHub repository : https://github.com/TIBHannover/GeoEstimation
+"""
+
 from argparse import ArgumentParser
 import sys
 from io import BytesIO
