@@ -376,7 +376,7 @@ def main():
                         image_download,
                         size_suffix=args.size_suffix,
                         min_edge_size=args.size,
-                        access_token=args.access_token,
+                        access_token=args.access_token_Mapillary,
                         msg_flag = args.msg
                     ),
                     image_loader,
