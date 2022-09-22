@@ -320,7 +320,7 @@ def parse_args():
     args.add_argument(
         "--threads",
         type=int,
-        default=48,
+        default=24,
         help="Number of threads to download and process images",
     )
     args.add_argument(
