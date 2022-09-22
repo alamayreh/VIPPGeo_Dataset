@@ -15,8 +15,8 @@ pip install gdown
 gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ --folder
 ```
 
-After downloading the ruls, download the dataset, using the follwoing scripts. 
-To download the datast in msg fromt (to save space), please specify ``` --msg ```
+After downloading the urls, download the dataset, using the follwoing scripts. 
+To store the datast in msg fromt (to save space), please specify ``` --msg ``` option.
 &nbsp;
 ### Train 
     python3 download_images.py --output dir_out/train --url_csv GeoDataset_Urls/train.csv 
