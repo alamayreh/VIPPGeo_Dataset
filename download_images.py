@@ -412,7 +412,7 @@ if __name__ == "__main__":
 
     logger = logging.getLogger("ImageDownloader")
     logger.setLevel(logging.INFO)
-    fh = logging.FileHandler(str(args.output / "writer.log"))
+    fh = logging.FileHandler(str("writer.log"))
     fh.setLevel(logging.INFO)
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
