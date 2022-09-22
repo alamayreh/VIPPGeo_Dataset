@@ -390,7 +390,7 @@ def main():
                     f.write(x)
                 else:
                     # store image in jpeg
-                    x["image"].save(args.output + '{}.jpeg'.format(str(x["id"])))
+                    x["image"].save(str(args.output) + '{}.jpeg'.format(str(x["id"])))
 
                 counter_successful += 1
 
