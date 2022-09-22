@@ -25,7 +25,21 @@ Download the dataset, using the follwoing scripts. To download the datast in msg
 ### Test 
     python3 download_test.py --output dir_test --url_csv GeoDataset_Urls/test.csv 
 
-## Acknowledgement 
+# Citation
+
+If you use this code for your research, please cite our paper.
+
+```
+@article{alamayreh2022country,
+  title={Which country is this picture from? New data and methods for DNN-based country recognition},
+  author={Alamayreh, Omran and Dimitri, Giovanna Maria and Wang, Jun and Tondi, Benedetta and Barni, Mauro},
+  journal={arXiv preprint arXiv:2209.02429},
+  year={2022}
+}
+
+```
+
+# Acknowledgement 
 
 This code heavily depends on the code provided by 
 
