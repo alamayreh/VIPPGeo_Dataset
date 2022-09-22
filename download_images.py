@@ -17,12 +17,10 @@ from functools import partial
 import re
 import logging
 import requests
-from sklearn.utils import shuffle
 import msgpack
 import pandas as pd
 import PIL
 from PIL import ImageFile
-from tqdm import tqdm
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
