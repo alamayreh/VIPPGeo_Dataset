@@ -18,12 +18,12 @@ gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ -
 Download the dataset, using the follwoing scripts. To download the datast in msg fromt (to save space), please specify ``` --msg ```
 &nbsp;
 ### Train 
-    python3 download_images.py --output dir_train --url_csv GeoDataset_Urls/train.csv 
+    python3 download_images.py --output dir_out/train --url_csv GeoDataset_Urls/train.csv 
 
 ### Validation
-    python3 download_images.py --output dir_validation --url_csv GeoDataset_Urls/valid.csv  
+    python3 download_images.py --output dir_out/validation --url_csv GeoDataset_Urls/valid.csv  
 ### Test 
-    python3 download_test.py --output dir_test --url_csv GeoDataset_Urls/test.csv 
+    python3 download_images.py --output dir_out/test --url_csv GeoDataset_Urls/test.csv 
 
 # Citation
 
