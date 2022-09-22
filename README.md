@@ -12,18 +12,18 @@ This is the official repository for the paper :
 
 ```
 pip install gdown
-gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ -O --folder
+gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ --folder
 ```
 
 Download the dataset, using the follwoing scripts. To download the datast in msg fromt (to save space), please specify ``` --msg ```
 &nbsp;
 ### Train 
-    python3 download_images.py --output out_dir --url_csv train.csv 
+    python3 download_images.py --output out_dir --url_csv GeoDataset_Urls/train.csv 
 
 ### Validation
-    python3 download_images.py --output out_dir --url_csv valid.csv  
+    python3 download_images.py --output out_dir --url_csv GeoDataset_Urls/valid.csv  
 ### Test 
-    python3 download_test.py --output out_dir --url_csv test.csv 
+    python3 download_test.py --output out_dir --url_csv GeoDataset_Urls/test.csv 
 
 ## Acknowledgement 
 
