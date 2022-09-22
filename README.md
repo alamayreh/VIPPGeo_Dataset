@@ -18,12 +18,12 @@ gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ -
 Download the dataset, using the follwoing scripts. To download the datast in msg fromt (to save space), please specify ``` --msg ```
 &nbsp;
 ### Train 
-    python3 download_images.py --output out_dir --url_csv train.csv --shuffle
+    python3 download_images.py --output out_dir --url_csv train.csv 
 
 ### Validation
-    python3 download_images.py --output out_dir --url_csv valid.csv --shuffle 
+    python3 download_images.py --output out_dir --url_csv valid.csv  
 ### Test 
-    python3 download_test.py --output out_dir --url_csv test.csv --shuffle 
+    python3 download_test.py --output out_dir --url_csv test.csv 
 
 ## Acknowledgement 
 

@@ -23,6 +23,10 @@ import pandas as pd
 import PIL
 from PIL import ImageFile
 from tqdm import tqdm
+
+# python3 download_images.py --output /media/hdddati1/omran/Geo_data_models/resources/dataset/test_dir
+#  --url_csv /media/hdddati1/omran/Geo_data_models/resources/dataset/urls/test.csv --shuffle
+
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
@@ -68,7 +72,7 @@ class MsgPackWriter:
         self.count += 1
 
 
-def image_download(x, size_suffix, min_edge_size,access_token,msg_flag):
+def image_download(x, size_suffix, min_edge_size,access_token):
 
     # check the source (Flickr,Unspalsh,Mapilary)
 
@@ -80,16 +84,16 @@ def image_download(x, size_suffix, min_edge_size,access_token,msg_flag):
 
             #logger.info("Download flickr")
             if "live" in url_original:
-                return flickr_download(x, size_suffix="", min_edge_size=min_edge_size,msg_flag=msg_flag)
+                return flickr_download(x, size_suffix="", min_edge_size=min_edge_size)
             else:
-                return flickr_download(x,size_suffix=size_suffix ,min_edge_size=min_edge_size,msg_flag=msg_flag)
+                return flickr_download(x,size_suffix=size_suffix ,min_edge_size=min_edge_size)
             #return None
         elif "unsplash" in url_original:
             #logger.info("Download unsplash")
-            return unsplash_download(x, min_edge_size,msg_flag=msg_flag)
+            return unsplash_download(x, min_edge_size)
             #return None
         elif "mapillary" in url_original:          
-            return download_mapillary(x, min_edge_size,access_token,msg_flag=msg_flag)
+            return download_mapillary(x, min_edge_size,access_token)
         else:
             logger.error(f"Invalid URL : {url_original}")
             return None
@@ -117,7 +121,7 @@ def _thumbnail(img: PIL.Image, size: int) -> PIL.Image:
         return img.resize((ow, oh), PIL.Image.BILINEAR)
 
 
-def download_mapillary(x, min_edge_size, access_token,msg_flag):
+def download_mapillary(x, min_edge_size, access_token):
 
     image_id = x["image_id"]
     url = x["url"]
@@ -170,13 +174,13 @@ def download_mapillary(x, min_edge_size, access_token,msg_flag):
     fp = BytesIO()
     image.save(fp, "JPEG")
 
-    if (msg_flag):
-        raw_bytes = fp.getvalue()
-        return {"image": raw_bytes, "id": image_id}
-    else: 
-        return {"image": image, "id": image_id}
+    #image.save(
+    #    '/data2/omran/models/delete/{}.jpeg'.format(image_id))
+    raw_bytes = fp.getvalue()
+    return {"image": raw_bytes, "id": image_id}
 
-def unsplash_download(x, min_edge_size,msg_flag):
+
+def unsplash_download(x, min_edge_size):
 
     # prevent downloading in full resolution using size_suffix
     # https://www.flickr.com/services/api/misc.urls.html
@@ -229,15 +233,14 @@ def unsplash_download(x, min_edge_size,msg_flag):
     # convert to jpeg
     fp = BytesIO()
     image.save(fp, "JPEG")
+    #logger.info("Save unsplash image")
+    # image.save(
+    #    '/media/hdddati1/omran/GeoEstimation/resources/images/unsplash/{}.jpeg'.format(image_id))
+    raw_bytes = fp.getvalue()
+    return {"image": raw_bytes, "id": image_id}
 
-    if (msg_flag):
-        raw_bytes = fp.getvalue()
-        return {"image": raw_bytes, "id": image_id}
-    else: 
-        return {"image": image, "id": image_id}
 
-
-def flickr_download(x, size_suffix, min_edge_size,msg_flag):
+def flickr_download(x, size_suffix, min_edge_size):
 
     # prevent downloading in full resolution using size_suffix
     # https://www.flickr.com/services/api/misc.urls.html
@@ -285,13 +288,10 @@ def flickr_download(x, size_suffix, min_edge_size,msg_flag):
     # convert to jpeg
     fp = BytesIO()
     image.save(fp, "JPEG")
-
-    if (msg_flag):
-        raw_bytes = fp.getvalue()
-        return {"image": raw_bytes, "id": image_id}
-    else: 
-        return {"image": image, "id": image_id}
-
+    # image.save(
+    #    '/media/hdddati1/omran/GeoEstimation/resources/images/flicker/{}.jpeg'.format(str(image_id).replace("/", "_")))
+    raw_bytes = fp.getvalue()
+    return {"image": raw_bytes, "id": image_id}
 
 
 class ImageDataloader:
@@ -328,12 +328,16 @@ def parse_args():
     args.add_argument(
         "--output",
         type=Path,
+        #default=Path(
+        #    "/data2/omran/dataset/flickr_splash_mapilry/valid_dir"),
         help="Output directory where images are stored",
     )
     args.add_argument(
         "--url_csv",
         type=Path,
-        help="Input urls, Train, Test, and validation",
+        # train_urls
+        #default=Path(
+        #    "/data2/omran/dataset/urls/valid.csv"),
     )
     args.add_argument(
         "--size",
@@ -348,7 +352,7 @@ def parse_args():
         help="Image size suffix according to the Flickr API; Empty string for original image",
     )
     args.add_argument(
-        "--access_token_Mapillary",
+        "--access_token",
         type=str,
         default="MLY|5110030895754170|06d86ff4d13808be555454636bd064c1",
         help="Access token for Mapillary API",
@@ -356,9 +360,6 @@ def parse_args():
     args.add_argument("--nrows", type=int)
     args.add_argument(
         "--shuffle", action="store_false", help="Shuffle list of URLs before downloading"
-    )
-    args.add_argument(
-        "--msg", action="store_true", help="Save images in msg format"
     )
     return args.parse_args()
 
@@ -379,7 +380,6 @@ def main():
                         size_suffix=args.size_suffix,
                         min_edge_size=args.size,
                         access_token=args.access_token,
-                        msg_flag = args.msg
                     ),
                     image_loader,
                 )
@@ -387,15 +387,9 @@ def main():
                 if x is None:
                     continue
 
-                if(args.msg):
-                    # store images in msg format 
-                    f.write(x)
-                else:
-                    # store image in jpeg
-                    x["image"].save(args.output + '{}.jpeg'.format(str(x["id"])))
-
+                f.write(x)
                 counter_successful += 1
-
+                # print(i)
                 if i % 1000 == 0:
                     end = time.time()
                     logger.info(
