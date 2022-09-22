@@ -24,3 +24,9 @@ Download the dataset, using the follwoing scripts. To download the datast in msg
     python3 download_images.py --output out_dir --url_csv valid.csv --shuffle 
 ### Test 
     python3 download_test.py --output out_dir --url_csv test.csv --shuffle 
+
+## Acknowledgement 
+
+This code heavily depends on the code provided by 
+
+[Geolocation Estimation of Photos using a Hierarchical Model and Scene Classification](https://github.com/TIBHannover/GeoEstimation) 
