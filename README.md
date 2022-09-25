@@ -26,6 +26,14 @@ To store the datast in msg fromt (to save space), please specify ``` --msg ``` o
 ### Test 
     python3 download_images.py --output dir_out/test --url_csv GeoDataset_Urls/test.csv 
 
+In addition, you can download our test set (the images and the necessary metadata) from google drive.
+
+```
+pip install gdown
+gdown https://drive.google.com/drive/folders/1En2vYbd02J2RGzOICOsMA2N1UuHJhsx4 --folder
+```
+
+
 # Citation
 
 If you use this code for your research, please cite our paper.
