@@ -348,7 +348,7 @@ def parse_args():
     args.add_argument(
         "--access_token_Mapillary",
         type=str,
-        default="MLY|5110030895754170|06d86ff4d13808be555454636bd064c1",
+        default="MLY|################|********************************",
         help="Access token for Mapillary API",
     )
     args.add_argument("--nrows", type=int)
