@@ -17,14 +17,16 @@ gdown https://drive.google.com/drive/folders/1CXVdpfFpolQah4PsfGXrhgoWtOtFEC__ -
 
 After downloading the urls, download the dataset, using the follwoing scripts. 
 To store the datast in msg fromt (to save space), please specify ``` --msg ``` option.
+
+Get your Access token for Mapillary API https://www.mapillary.com/developer/api-documentation 
 &nbsp;
 ### Train 
-    python3 download_images.py --output dir_out/train --url_csv GeoDataset_Urls/train.csv 
+    python3 download_images.py --output dir_out/train --url_csv GeoDataset_Urls/train.csv --access_token_Mapillary  MLY|################|********************************
 
 ### Validation
-    python3 download_images.py --output dir_out/validation --url_csv GeoDataset_Urls/valid.csv  
+    python3 download_images.py --output dir_out/validation --url_csv GeoDataset_Urls/valid.csv  --access_token_Mapillary  MLY|################|********************************
 ### Test 
-    python3 download_images.py --output dir_out/test --url_csv GeoDataset_Urls/test.csv 
+    python3 download_images.py --output dir_out/test --url_csv GeoDataset_Urls/test.csv --access_token_Mapillary  MLY|################|********************************
 
 In addition, you can download our test set (the images and the necessary metadata) from google drive.
 
